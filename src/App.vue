@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import 'normalize.css'
 import myheader from './components/myheader'
 import myfooter from './components/myfooter'
 
