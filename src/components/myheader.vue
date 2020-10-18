@@ -8,8 +8,8 @@
       </div>
       <nav class="header-menu">
         <ul class="header-menu-list">
-          <li>TOP</li>
-          <li>ABOUT</li>
+          <li><router-link to="/">TOP</router-link></li>
+          <li><router-link to="/about">ABOUT</router-link></li>
           <li>CONTACT</li>
         </ul>
         <div class="font-change">
