@@ -3,7 +3,14 @@
     <myheader></myheader>
       <div id="nav">
         <router-link to="/">Home</router-link> |
-        <router-link to="/about">About</router-link>
+        <router-link to="/about">About</router-link> |
+        <router-link to="/contents1">Contents1</router-link> |
+        <router-link to="/contents2">Contents2</router-link> |
+        <router-link to="/contents3">Contents3</router-link> |
+        <router-link to="/contents4">Contents4</router-link> |
+        <router-link to="/contents5">Contents5</router-link> |
+        <router-link to="/contents6">Contents6</router-link> |
+        <router-link to="/contents7">Contents7</router-link>
       </div>
       <router-view/>
     <myfooter></myfooter>
