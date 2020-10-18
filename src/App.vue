@@ -30,6 +30,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 50px;
+  box-sizing: border-box;
 }
 
 #nav {
