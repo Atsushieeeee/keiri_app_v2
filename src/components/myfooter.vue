@@ -1,6 +1,6 @@
 <template>
   <footer>
-    Footer
+    <h2>Copyright&copy;ATSUSHI. All Rights Reserved.</h2>
   </footer>
 </template>
 
@@ -9,6 +9,11 @@
     width: 100%;
     position: absolute;
     bottom: 0;
+    background: orange;
+  }
+
+  footer h2{
+    font-size: 14px;
   }
 
 </style>
