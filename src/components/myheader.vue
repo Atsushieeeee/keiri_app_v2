@@ -10,7 +10,7 @@
         <ul class="header-menu-list">
           <li><router-link to="/">TOP</router-link></li>
           <li><router-link to="/about">ABOUT</router-link></li>
-          <li>CONTACT</li>
+          <li><router-link to="/contact">CONTACT</router-link></li>
         </ul>
         <div class="font-change">
           <div class="font-change-left">
