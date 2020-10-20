@@ -1,5 +1,5 @@
 <template>
-  <div class="math">
+  <div class="contents3">
     <h1>上場株式配当金</h1>
     <form action="" name="form">
       <input type="tel" class="haitou" v-model.number="answer">
