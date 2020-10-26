@@ -1,9 +1,14 @@
 <template>
   <div class="contents7">
-    <h1>Contents7</h1>
+    <h1>売上代金に係る金銭又は有価証券の受取書</h1>
         <form action="" name="form">
       <input type="tel" class="receipt" v-model.number="answer">
     </form>
+    <select v-model = "selected" name="" id="">
+      <option v-for="option in options" v-bind:value="option.name" v-bind:key="option.id">
+        {{ option.name }}
+      </option>
+    </select>
     <button class="mbtn" @click="testNum">計算</button>
     <button class="mbtn" @click="clear">クリア</button>
     <p style="color:red" v-show="show">結果1:{{num1 | number_format}}</p>
@@ -23,6 +28,11 @@ export default {
       num2:'',
       num3:'',
       num4:'',
+      selected:'Name1',
+      options:[
+        {name:'Name1', id:1},
+        {name:'Name2', id:2}
+      ],
       show:false
     }
   },
