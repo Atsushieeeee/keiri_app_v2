@@ -1,5 +1,8 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <h1>時短経理について</h1>
+    <p>経理業務でよく使う計算をまとめた計算ツールになります。</p>
+    <p>数値が間違っている場合はお手数ですが、CONTACTから連絡お願いします。</p>
+    <p>※利用は自己責任でお願いします。</p>
   </div>
 </template>
