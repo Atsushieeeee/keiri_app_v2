@@ -59,7 +59,13 @@
   .header-menu-list{
     display: flex;
     justify-content: space-between;
+    padding:0px 15px;
   }
-  
+
+  header a{
+    color: #424242;
+    font-size: 14px;
+    font-weight: bold;
+  }  
 
 </style>
