@@ -1,39 +1,40 @@
 <template>
   <div class="contents3">
     <h2>上場株式配当金</h2>
-    <div class="contents3-form">
-      <form action="" name="form">
-        <input type="tel" class="haitou" v-model.number="answer">
-      </form>
-    </div>
-    <div class="contents3-btn">
-      <button class="mbtn" @click="testNum">計算</button>
-      <button class="cbtn" @click="clear">クリア</button>
-    </div>
-    <div class="contents2-comment">
-      <p>※金額は半角数字で入力してください</p>
-      <p>※利用は自己責任でお願いします</p>
-    </div>
-    <div class="contents3-result">
-      <table class="contents3-table">
-          <tr class='caution'>
-            <th>配当金額 :</th>
-            <td id='haitou1' v-show="show">{{num1 | number_format}}</td>
-          </tr>
-          <tr class='caution'>
-            <th>所得税額 :</th>
-            <td id='syotoku1' v-show="show">{{num2 | number_format}}</td>
-          </tr>
-          <tr class='caution'>
-            <th>復興税額 :</th>
-            <td id='hukkou1' v-show="show">{{num3 | number_format}}</td>
-          </tr>
-          <tr class='caution'>
-            <th>税額合計 :</th>
-            <td id='totalTax1' v-show="show">{{num4 | number_format}}</td>
-          </tr>
-
-      </table>
+    <div class="contents3-wrap">
+      <div class="contents3-form">
+        <form action="" name="form">
+          <input type="tel" class="haitou" v-model.number="answer">
+        </form>
+      </div>
+      <div class="contents3-btn">
+        <button class="mbtn" @click="testNum">計算</button>
+        <button class="cbtn" @click="clear">クリア</button>
+      </div>
+      <div class="contents3-comment">
+        <p>※金額は半角数字で入力してください</p>
+        <p>※利用は自己責任でお願いします</p>
+      </div>
+      <div class="contents3-result">
+        <table class="contents3-table">
+            <tr class='caution'>
+              <th>配当金額 :</th>
+              <td id='haitou1' v-show="show">{{num1 | number_format}}</td>
+            </tr>
+            <tr class='caution'>
+              <th>所得税額 :</th>
+              <td id='syotoku1' v-show="show">{{num2 | number_format}}</td>
+            </tr>
+            <tr class='caution'>
+              <th>復興税額 :</th>
+              <td id='hukkou1' v-show="show">{{num3 | number_format}}</td>
+            </tr>
+            <tr class='caution'>
+              <th>税額合計 :</th>
+              <td id='totalTax1' v-show="show">{{num4 | number_format}}</td>
+            </tr>
+        </table>
+      </div>
     </div>
   </div>
 </template>
@@ -89,6 +90,10 @@ export default {
     &-comment{
       padding: 10px;
       text-align: center;
+      p{
+      font-size: 11px;
+      color: #BDBDBD;
+      }
     }
     &-result{
       text-align: center;
