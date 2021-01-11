@@ -18,6 +18,7 @@
 
 <style lang="scss">
 #nav {
+  width: 20vw;
   padding: 30px;
 
   a {

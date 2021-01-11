@@ -1,27 +1,103 @@
 <template>
   <div class="contents1">
     <h1>手形分割計算</h1>
-        <form action="" name="form">
-      <input type="tel" class="receipt" v-model.number="answer">
-    </form>
-    <select v-model = "selected" name="" id="">
-      <option v-for="option in options" v-bind:value="option.name" v-bind:key="option.id">
-        {{ option.name }}
-      </option>
-    </select>
-    <button class="mbtn" @click="testNum">計算</button>
-    <button class="mbtn" @click="clear">クリア</button>
-    <p style="color:red" v-show="show">結果1:{{this.num1 | number_format}}</p>
-    <p style="color:blue" v-show="show">結果2:{{this.num2 | number_format}}</p>
-    <p style="color:green" v-show="show">結果3:{{this.num3 | number_format}}</p>
-    <p style="color:orange" v-show="show">結果4:{{this.num4 | number_format}}</p>
-    <p style="color:red" v-show="show">結果11:{{this.num11 | number_format}}</p>
-    <p style="color:blue" v-show="show">結果12:{{this.num12 | number_format}}</p>
-    <p style="color:green" v-show="show">結果13:{{this.num13 | number_format}}</p>
-    <p style="color:orange" v-show="show">結果14:{{this.num14 | number_format}}</p>
-    <p style="color:green" v-show="show">結果15:{{this.num15 | number_format}}</p>
-    <p style="color:orange" v-show="show">結果16:{{this.num16 | number_format}}</p>
-
+    <div class="contents1-wrap">
+      <div class="conents1-left">
+        <div class="contents1-form">
+          <form action="" name="form" class="">
+            <p>手形金額入力:</p>
+            <input type="tel" class="receipt" v-model.number="answer">
+          </form>
+        </div>
+        <div class="contents1-select">
+          <select v-model = "selected" name="" id="">
+            <option v-for="option in options" v-bind:value="option.name" v-bind:key="option.id">
+              {{ option.name }}
+            </option>
+          </select>
+        </div>
+        <div class="contents1-btn">
+          <button class="mbtn" @click="testNum">計算</button>
+          <button class="cbtn" @click="clear">クリア</button>
+        </div>
+        <div class="contents1-comment">
+          <p>※金額は半角数字で入力してください</p>
+          <p>※利用は自己責任でお願いします</p>
+        </div>
+        <div class="contents1-result">
+          <p style="color:red" v-show="show">手形1枚目:{{this.num1 | number_format}}</p>
+          <p style="color:blue" v-show="show">手形2枚目:{{this.num2 | number_format}}</p>
+          <p style="color:green" v-show="show">印紙1枚目:{{this.num3 | number_format}}</p>
+          <p style="color:orange" v-show="show">印紙2枚目:{{this.num4 | number_format}}</p>
+          <p style="color:red" v-show="show">手形1枚目:{{this.num11 | number_format}}</p>
+          <p style="color:blue" v-show="show">手形2枚目:{{this.num12 | number_format}}</p>
+          <p style="color:green" v-show="show">手形3枚目:{{this.num13 | number_format}}</p>
+          <p style="color:orange" v-show="show">印紙1枚目:{{this.num14 | number_format}}</p>
+          <p style="color:green" v-show="show">印紙2枚目:{{this.num15 | number_format}}</p>
+          <p style="color:orange" v-show="show">印紙3枚目:{{this.num16 | number_format}}</p>
+        </div>
+      </div>
+      <div class="contents1-right">
+        <div class='contents1-data'>
+          <table class='contents1-table'>
+            <tr>
+              <th>記載金額</th>
+              <td>税額</td>
+              <th>記載金額</th>
+              <td>税額</td>
+            </tr>
+            <tr>
+              <th>10万円未満</th>
+              <td>非課税</td>
+              <td>3千万円を超え5千万円以下</td>
+              <td>1万円</td>
+            </tr>
+            <tr>
+              <th>10万円以上100万円以下</th>
+              <td>200円</td>
+              <td>5千万円を超え1億円以下</td>
+              <td>2万円</td>
+            </tr>
+            <tr>
+              <th>100万円を超え200万円以下</th>
+              <td>400円</td>
+              <td>1億円を超え2億円以下</td>
+              <td>4万円</td>
+            </tr>
+            <tr>
+              <th>200万円を超え300万円以下</th>
+              <td>600円</td>
+              <td>2億円を超え3億円以下</td>
+              <td>6万円</td>
+            </tr>
+            <tr>
+              <th>300万円を超え500万円以下</th>
+              <td>1千円</td>
+              <td>3億円を超え5億円以下</td>
+              <td>10万円</td>
+            </tr>
+            <tr>
+              <th>500万円を超え1千万円以下</th>
+              <td>2千円</td>
+              <td>5億円を超え10億円以下</td>
+              <td>15万円</td>
+            </tr>
+            <tr>
+              <th>1千万円を超え2千万円以下</th>
+              <td>4千円</td>
+              <td>10億円を超えるもの</td>
+              <td>20万円</td>
+            </tr>
+            <tr>
+              <th>2千万円を超え3千万円以下</th>
+              <td>6千円</td>
+              <td></td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -40,10 +116,10 @@ export default {
       num14:'',
       num15:'',
       num16:'',
-      selected:'Name1',
+      selected:'手形2枚',
       options:[
-        {name:'Name1', id:1},
-        {name:'Name2', id:2}
+        {name:'手形2枚', id:1},
+        {name:'手形3枚', id:2}
       ],
       show:false
     }
@@ -67,7 +143,7 @@ export default {
       var st150k = "150000円"
       var st200k = "200000円"
 
-      if(this.selected === 'Name1'){
+      if(this.selected === '手形2枚'){
 
       if (0 <= cash && cash <= 100000) { this.num1 = cash , this.num2 = "", this.num3 = st0, this.num4 = ""}
       else if (100001 <= cash && cash <= 1000000) { this.num1 = cash , this.num2 = "", this.num3 = st200, this.num4 = ""}
@@ -478,4 +554,129 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+  
+  .receipt{
+    height: 30px;
+    width: 150px;
+  }
+
+  .contents1{
+    /* height: calc(100vh-150px); */
+    width: 80vw;
+  }
+
+  .contents1-wrap{
+    flex-direction: row;
+    display: flex;  
+    justify-content: space-between;
+    margin: 0px 10%;
+  }
+
+  .contents1-left{
+    width:40%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contents1-form form{
+    display: flex;
+    flex-direction: row;
+    // display: inline-block;
+    // justify-content: flex-start;
+  }
+
+  .contents1-select{
+    padding: 10px;
+    text-align: center;
+    select{
+      width: 200px;
+      height:30px;
+      font-size:13px;
+    }
+  }
+
+  .contents1-btn{
+    text-align: center;
+    padding: 10px;
+  }
+
+  .contents1-comment{
+    padding: 10px;
+    text-align: center;
+    p{
+    font-size: 11px;
+    color: #BDBDBD;
+    }
+  }
+
+  .contents1-result{
+    flex-direction: row;
+    display: flex;
+    font-size: 14px;
+  }
+
+  .contents1-table{
+    border: #6E6E6E 1px solid;
+    font-size: 11px;
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    th,td{
+      padding: 4px 15px;
+      text-align: left;
+      font-weight: normal;
+    }
+    tr:nth-child(odd){
+      background-color: #eee
+    }
+    tr:nth-child(even){
+      background-color: #fff
+    }
+
+    tr:first-child{
+      border-bottom: 1px solid #6E6E6E;
+    }
+  }
+
+  .mbtn{
+    display: inline-block;
+    padding: 0.2em 1.2em;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    border-bottom: solid 4px #627295;
+    color: #FFF;
+    font-size: 15px;
+    border-radius: 3px;
+    &:active{
+      -webkit-transform: translateY(4px);
+      transform: translateY(4px);/*下に動く*/
+      box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+      border-bottom: none;
+    }
+  }
+
+  .cbtn {
+    display: inline-block;
+    padding: 0.2em 1.2em;
+    text-decoration: none;
+    background: #FA5858;/*ボタン色*/
+    border-bottom: solid 4px #B43104;
+    color: #FFF;
+    border-radius: 3px;
+    font-size: 15px;
+    &:active{
+      -webkit-transform: translateY(4px);
+      transform: translateY(4px);/*下に動く*/
+      box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+      border-bottom: none;
+    }
+  }
+
+
+
+
+</style>
 

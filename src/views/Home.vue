@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    TOP
+    <img class="header-logo" src="../assets/headerlogo.png" alt="">
   </div>
 </template>
 
