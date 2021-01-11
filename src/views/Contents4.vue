@@ -1,18 +1,41 @@
 <template>
   <div class="contents4">
-    <h1>非上場株式配当金</h1>
-    <form action="" name="form">
-      <input type="tel" class="h-haitou" v-model.number="answer">
-    </form>
-    <button class="mbtn" @click="testNum">計算</button>
-    <button class="mbtn" @click="clear">クリア</button>
-    <p style="color:red" v-show="show">結果1:{{num1 | number_format}}</p>
-    <p style="color:blue" v-show="show">結果2:{{num2 | number_format}}</p>
-    <p style="color:green" v-show="show">結果3:{{num3 | number_format}}</p>
-    <p style="color:orange" v-show="show">結果4:{{num4 | number_format}}</p>
-
-
-    <p></p>
+    <h2>非上場株式配当金</h2>
+    <div class="contents4-wrap">
+      <div class="contents4-form">
+        <form action="" name="form">
+          <input type="tel" class="h-haitou" v-model.number="answer">
+        </form>
+      </div>
+      <div class="contents4-btn">
+        <button class="mbtn" @click="testNum">計算</button>
+        <button class="cbtn" @click="clear">クリア</button>
+      </div>
+      <div class="contents4-comment">
+        <p>※金額は半角数字で入力してください</p>
+        <p>※利用は自己責任でお願いします</p>
+      </div>
+      <div class="contents4-result">
+        <table class="contents4-table">
+          <tr class='caution'>
+          <th>配当金額 :</th>
+          <td id='haitou2' v-show="show">{{num1 | number_format}}</td>
+          </tr>
+          <tr class='caution'>
+          <th>所得税額 :</th>
+          <td id='syotoku2' v-show="show">{{num2 | number_format}}</td>
+          </tr>
+          <tr class='caution'>
+          <th>復興税額 :</th>
+          <td id='hukkou2' v-show="show">{{num3 | number_format}}</td>
+          </tr>
+          <tr class='caution'>
+          <th>税額合計 :</th>
+          <td id='totalTax2' v-show="show">{{num4 | number_format}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -46,4 +69,45 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+
+  .contents4 h2 {
+      text-align: center;
+      padding: 10px;
+      font-size: 20px;
+  }
+
+  .contents4{
+    width: 80vw;
+    &-form{
+      text-align: center;
+    }
+    &-button{
+      text-align: center;
+      padding: 10px;  
+    }
+    &-comment{
+      padding: 10px;
+      text-align: center;
+      p{
+      font-size: 11px;
+      color: #BDBDBD;
+      }
+    }
+    &-result{
+      text-align: center;
+      font-size: 14px;
+    }
+    &-table{
+      font-size: 14px;
+      margin: 0 auto;
+      tr th{
+        color: #424242;
+        font-weight: normal;
+      }
+    }
+  }
+</style>
+
 
