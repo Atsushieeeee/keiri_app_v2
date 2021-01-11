@@ -1,8 +1,10 @@
 <template>
   <div id="app">
     <myheader></myheader>
-    <side></side>
-    <router-view/>
+    <div class="contents">
+      <side></side>
+      <router-view/>
+    </div>
     <myfooter></myfooter>
   </div>
 </template>
@@ -41,4 +43,10 @@ div{
 a{
   text-decoration: none;
 }
+
+.contents{
+  flex-direction: row;
+  display:flex;
+}
+
 </style>
