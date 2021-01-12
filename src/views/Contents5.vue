@@ -16,7 +16,7 @@
       </div>
       <div class="contents5-btn">
         <button class="mbtn" @click="testNum">計算</button>
-        <button class="mbtn" @click="clear">クリア</button>
+        <button class="cbtn" @click="clear">クリア</button>
       </div>
       <div class="contents5-comment">
         <p>※金額は半角数字で入力してください</p>
