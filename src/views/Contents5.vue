@@ -1,6 +1,6 @@
 <template>
   <div class="contents5">
-    <h1>契約書</h1>
+    <h2>契約書</h2>
     <div class="contents5-wrap">
       <div class="contents5-form">
         <form action="" name="form">

@@ -1,6 +1,6 @@
 <template>
   <div class="contents6">
-    <h1>源泉</h1>
+    <h2>源泉</h2>
     <div class="contents6-wrap">
       <div class="contents6-form">
         <form action="" name="form">

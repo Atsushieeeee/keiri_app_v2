@@ -1,27 +1,99 @@
 <template>
   <div class="contents7">
-    <h1>売上代金に係る金銭又は有価証券の受取書</h1>
-        <form action="" name="form">
-      <input type="tel" class="receipt" v-model.number="answer">
-    </form>
-    <select v-model = "selected" name="" id="">
-      <option v-for="option in options" v-bind:value="option.name" v-bind:key="option.id">
-        {{ option.name }}
-      </option>
-    </select>
-    <button class="mbtn" @click="testNum">計算</button>
-    <button class="mbtn" @click="clear">クリア</button>
-    <p style="color:red" v-show="show">結果1:{{num1 | number_format}}</p>
-    <p style="color:blue" v-show="show">結果2:{{num2 | number_format}}</p>
-    <p style="color:green" v-show="show">結果3:{{num3 | number_format}}</p>
-    <p style="color:orange" v-show="show">結果4:{{num4 | number_format}}</p>
-    <p style="color:red" v-show="show">結果11:{{num11 | number_format}}</p>
-    <p style="color:blue" v-show="show">結果12:{{num12 | number_format}}</p>
-    <p style="color:green" v-show="show">結果13:{{num13 | number_format}}</p>
-    <p style="color:orange" v-show="show">結果14:{{num14 | number_format}}</p>
-    <p style="color:green" v-show="show">結果15:{{num15 | number_format}}</p>
-    <p style="color:orange" v-show="show">結果16:{{num16 | number_format}}</p>
-
+    <h2>売上代金に係る金銭又は有価証券の受取書</h2>
+    <div class="contents7-wrap">
+      <div class="contents7-left">
+        <div class="contents7-form">
+          <form action="" name="form">
+            <p>金額入力:</p>
+            <input type="tel" class="receipt" v-model.number="answer">
+          </form>
+        </div>
+        <div class="contents7-select">
+          <select v-model = "selected" name="" id="">
+            <option v-for="option in options" v-bind:value="option.name" v-bind:key="option.id">
+              {{ option.name }}
+            </option>
+          </select>
+        </div>
+        <div class="contents7-btn">
+          <button class="mbtn" @click="testNum">計算</button>
+          <button class="cbtn" @click="clear">クリア</button>
+        </div>
+        <div class="contents7-result">
+          <p style="color:red" v-show="show">結果1:{{num1 | number_format}}</p>
+          <p style="color:blue" v-show="show">結果2:{{num2 | number_format}}</p>
+          <p style="color:green" v-show="show">結果3:{{num3 | number_format}}</p>
+          <p style="color:orange" v-show="show">結果4:{{num4 | number_format}}</p>
+          <p style="color:red" v-show="show">結果11:{{num11 | number_format}}</p>
+          <p style="color:blue" v-show="show">結果12:{{num12 | number_format}}</p>
+          <p style="color:green" v-show="show">結果13:{{num13 | number_format}}</p>
+          <p style="color:orange" v-show="show">結果14:{{num14 | number_format}}</p>
+          <p style="color:green" v-show="show">結果15:{{num15 | number_format}}</p>
+          <p style="color:orange" v-show="show">結果16:{{num16 | number_format}}</p>
+        </div>
+      </div>
+      <div class="contents7-right">
+        <div class='contents7-data'>
+          <table class='contents7-table'>
+            <tr>
+            <th>記載金額</th>
+            <td>税額</td>
+            <th>記載金額</th>
+            <td>税額</td>
+            </tr>
+            <tr>
+            <th>5万円未満</th>
+            <td>非課税</td>
+            <td>3千万円を超え5千万円以下</td>
+            <td>1万円</td>
+            </tr>
+            <tr>
+            <th>5万円以上100万円以下</th>
+            <td>200円</td>
+            <td>5千万円を超え1億円以下</td>
+            <td>2万円</td>
+            </tr>
+            <tr>
+            <th>100万円を超え200万円以下</th>
+            <td>400円</td>
+            <td>1億円を超え2億円以下</td>
+            <td>4万円</td>
+            </tr>
+            <tr>
+            <th>200万円を超え300万円以下</th>
+            <td>600円</td>
+            <td>2億円を超え3億円以下</td>
+            <td>6万円</td>
+            </tr>
+            <tr>
+            <th>300万円を超え500万円以下</th>
+            <td>1千円</td>
+            <td>3億円を超え5億円以下</td>
+            <td>10万円</td>
+            </tr>
+            <tr>
+            <th>500万円を超え1千万円以下</th>
+            <td>2千円</td>
+            <td>5億円を超え10億円以下</td>
+            <td>15万円</td>
+            </tr>
+            <tr>
+            <th>1千万円を超え2千万円以下</th>
+            <td>4千円</td>
+            <td>10億円を超えるもの</td>
+            <td>20万円</td>
+            </tr>
+            <tr>
+            <th>2千万円を超え3千万円以下</th>
+            <td>6千円</td>
+            <td></td>
+            <td></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -40,10 +112,10 @@ export default {
       num14:'',
       num15:'',
       num16:'',
-      selected:'Name1',
+      selected:'受取書2枚',
       options:[
-        {name:'Name1', id:1},
-        {name:'Name2', id:2}
+        {name:'受取書2枚', id:1},
+        {name:'受取書3枚', id:2}
       ],
       show:false
     }
@@ -479,3 +551,92 @@ export default {
 }
 </script>
 
+<style lang="scss">
+  
+  .receipt{
+    height: 30px;
+    width: 150px;
+  }
+
+  .contents7{
+    /* height: calc(100vh-150px); */
+    width: 80vw;
+  }
+
+  .contents7-wrap{
+    flex-direction: row;
+    display: flex;  
+    justify-content: space-between;
+    margin: 0px 10%;
+  }
+
+  .contents7-left{
+    width:40%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contents7-form form{
+    display: flex;
+    flex-direction: row;
+    // display: inline-block;
+    // justify-content: flex-start;
+  }
+
+  .contents7-select{
+    padding: 10px;
+    text-align: center;
+    select{
+      width: 200px;
+      height:30px;
+      font-size:13px;
+    }
+  }
+
+  .contents7-btn{
+    text-align: center;
+    padding: 10px;
+  }
+
+  .contents7-comment{
+    padding: 10px;
+    text-align: center;
+    p{
+    font-size: 11px;
+    color: #BDBDBD;
+    }
+  }
+
+  .contents7-result{
+    flex-direction: row;
+    display: flex;
+    font-size: 14px;
+  }
+
+  .contents7-table{
+    border: #6E6E6E 1px solid;
+    font-size: 11px;
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    th,td{
+      padding: 4px 15px;
+      text-align: left;
+      font-weight: normal;
+    }
+    tr:nth-child(odd){
+      background-color: #eee
+    }
+    tr:nth-child(even){
+      background-color: #fff
+    }
+
+    tr:first-child{
+      border-bottom: 1px solid #6E6E6E;
+    }
+  }
+
+
+
+</style>
