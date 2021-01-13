@@ -47,41 +47,43 @@ a{
 .contents{
   flex-direction: row;
   display:flex;
+  height: calc(100vh - 150px);
+  width: 100%;
 }
 
-  .mbtn{
-    display: inline-block;
-    padding: 0.2em 1.2em;
-    text-decoration: none;
-    background: #668ad8;/*ボタン色*/
-    border-bottom: solid 4px #627295;
-    color: #FFF;
-    font-size: 15px;
-    border-radius: 3px;
-    &:active{
-      -webkit-transform: translateY(4px);
-      transform: translateY(4px);/*下に動く*/
-      box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
-      border-bottom: none;
-    }
+.mbtn{
+  display: inline-block;
+  padding: 0.2em 1.2em;
+  text-decoration: none;
+  background: #668ad8;/*ボタン色*/
+  border-bottom: solid 4px #627295;
+  color: #FFF;
+  font-size: 15px;
+  border-radius: 3px;
+  &:active{
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+    border-bottom: none;
   }
+}
 
-  .cbtn {
-    display: inline-block;
-    padding: 0.2em 1.2em;
-    text-decoration: none;
-    background: #FA5858;/*ボタン色*/
-    border-bottom: solid 4px #B43104;
-    color: #FFF;
-    border-radius: 3px;
-    font-size: 15px;
-    &:active{
-      -webkit-transform: translateY(4px);
-      transform: translateY(4px);/*下に動く*/
-      box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
-      border-bottom: none;
-    }
+.cbtn {
+  display: inline-block;
+  padding: 0.2em 1.2em;
+  text-decoration: none;
+  background: #FA5858;/*ボタン色*/
+  border-bottom: solid 4px #B43104;
+  color: #FFF;
+  border-radius: 3px;
+  font-size: 15px;
+  &:active{
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+    border-bottom: none;
   }
+}
 
 
 </style>

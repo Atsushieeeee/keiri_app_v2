@@ -17,12 +17,15 @@
 </script>
 
 <style lang="scss">
+
 #nav {
   width: 20vw;
-  padding: 30px;
-
+  height: 100%;
   a {
+    width: 100%;
+    height: 100%;
     font-weight: bold;
+    font-size: 14px;
     color: #2c3e50;
 
     &.router-link-exact-active {
@@ -32,6 +35,14 @@
   li {
     display: list-item;
     padding-bottom: 15px;
+    margin: 5px;
+    flex: 1;
+    background-color:#ffe9a9;
+    display: flex;
+    box-shadow: 0 0 2px gray;
+    border-bottom: solid 4px #fac559;
+    justify-content: center;
+    align-items: center;
   }
   ul {
     float: left;
