@@ -4,6 +4,7 @@
     <div class="contents5-wrap">
       <div class="contents5-form">
         <form action="" name="form">
+          金額：
           <input type="tel" class="contract" v-model.number="answer">
         </form>
       </div>
@@ -99,7 +100,7 @@ export default {
     &-form{
       text-align: center;
     }
-    &-button{
+    &-btn{
       text-align: center;
       padding: 10px;  
     }
@@ -124,4 +125,15 @@ export default {
       }
     }
   }
+
+    .contents5-select{
+    padding: 10px;
+    text-align: center;
+    select{
+      // width: 200px;
+      height:30px;
+      font-size:13px;
+    }
+  }
+
 </style>
