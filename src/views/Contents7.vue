@@ -5,7 +5,7 @@
       <div class="contents7-left">
         <div class="contents7-form">
           <form action="" name="form">
-            <p>金額入力:</p>
+            金額:
             <input type="tel" class="receipt" v-model.number="answer">
           </form>
         </div>

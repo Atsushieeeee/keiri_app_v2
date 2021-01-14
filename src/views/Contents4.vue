@@ -4,6 +4,7 @@
     <div class="contents4-wrap">
       <div class="contents4-form">
         <form action="" name="form">
+          金額：
           <input type="tel" class="h-haitou" v-model.number="answer">
         </form>
       </div>
@@ -83,7 +84,7 @@ export default {
     &-form{
       text-align: center;
     }
-    &-button{
+    &-btn{
       text-align: center;
       padding: 10px;  
     }

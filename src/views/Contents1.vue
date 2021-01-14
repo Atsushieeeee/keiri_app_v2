@@ -5,7 +5,7 @@
       <div class="conents1-left">
         <div class="contents1-form">
           <form action="" name="form" class="">
-            <p>手形金額入力:</p>
+            手形金額入力:
             <input type="tel" class="receipt" v-model.number="answer">
           </form>
         </div>
@@ -581,8 +581,8 @@ export default {
   }
 
   .contents1-form form{
-    display: flex;
-    flex-direction: row;
+    // display: flex;
+    // flex-direction: row;
     // display: inline-block;
     // justify-content: flex-start;
   }
